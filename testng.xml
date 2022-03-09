@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Appsierra session">
+
+	<listeners>
+		<listener class-name="listener.ExtentReporterNG" />
+		<listener class-name="listener.ListenerTest" />
+	</listeners>
+
+	<test name="Test" thread-count="1">
+   <parameter name="Browser" value="firefox"/>
+   <parameter name="url" value="https://www.flipkart.com/"/>
+<groups>
+<run>
+<include name="Login"/>
+</run>
+</groups>
+		<classes>
+			<class name="TestCases.LoginTest"/>
+           <class name="TestCases.SectionsVerification" />
+		</classes>
+	</test>
+	
+</suite>
